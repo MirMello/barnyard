@@ -19,4 +19,4 @@ An app that for those with farm animals to connect to others in the community.
 ## Deployment
 
 ## Made by
-Miranda Mello, Alex Canez, Braden Sandgren, Alex Standfield, and Andrea Rowland
+Miranda Mello, Alex Canez, Braden Sandgren, and Alex Standfield
