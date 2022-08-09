@@ -1,8 +1,8 @@
-import Header from "../Header";
+import Header from "./header";
 import React, { useState } from 'react';
-import { validatePost } from '../../utils/helpers';
+import {validatePost} from '../utils/helpers';
 
-function Post() {
+function Post({type}) {
     const [postState, setPostState] = useState({ message: '' });
     const [errorMessage, setErrorMessage] = useState('');
     const { message } = postState;
@@ -30,7 +30,7 @@ function Post() {
 
     return (
         <div>
-            <Header title="Post in your Barnyard" />
+            <Header title={`${type=== 'barns'?"Post in your Barnyard":"Post in your Stall"}`} />
             <div>
                 <h3>Create a Post:</h3>
                 <div>
@@ -47,7 +47,15 @@ function Post() {
                 </button>
             </div>
             <section>
-                 <h3>Post Feed:</h3>
+                <h3>Post Feed:</h3>
+                <div>
+                    <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} />
+                </div>
+                {errorMessage && (
+                    <div>
+                        <p className="error-text">{errorMessage}</p>
+                    </div>
+                )}
             </section>
         </div>
     )

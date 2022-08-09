@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import animals from './components/animals';
+import events from './components/events';
+import pictures from './components/pictures';
+import post from './components/Post';
+import Barns from './pages/barns';
+import Stalls from './pages/stalls';
 
 function App() {
+  const [currentPage, setcurrentPage] = useState('Barnyard')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <nav>
+        <ul style={{ display: 'flex', listStyle: 'none' }}>
+          <li id='title'>Barnyard</li>
+          <li onClick={() => setcurrentPage("login")}>Login</li>
+          <li onClick={() => setcurrentPage("createAccount")}>Create Account</li>
+        </ul>
+      </nav>
+      {currentPage === "Barns" ? <Barns />
+        : <Stalls />}
     </div>
   );
 }
