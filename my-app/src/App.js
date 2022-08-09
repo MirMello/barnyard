@@ -15,8 +15,8 @@ function App() {
       <nav>
         <ul style={{ display: 'flex', listStyle: 'none' }}>
           <li id='title'>Barnyard</li>
-          <li onClick={() => setcurrentPage("login")}>Login</li>
-          <li onClick={() => setcurrentPage("createAccount")}>Create Account</li>
+          <button type="login-button">Login</button>
+          <button type="sign-up-button">Sign Up</button>
         </ul>
       </nav>
       {currentPage === "Stalls" ? <Stalls />
