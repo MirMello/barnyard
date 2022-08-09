@@ -19,8 +19,8 @@ function App() {
           <li onClick={() => setcurrentPage("createAccount")}>Create Account</li>
         </ul>
       </nav>
-      {currentPage === "Barns" ? <Barns />
-        : <Stalls />}
+      {currentPage === "Stalls" ? <Stalls />
+        : <Barns />}
     </div>
   );
 }
