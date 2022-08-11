@@ -32,7 +32,7 @@ function Stalls() {
         <div>
             <body>
                 <section>
-                    <h1>my stall?</h1>
+                    <h1>My stall</h1>
                 </section>
                 <div>
                     <button type="donation">

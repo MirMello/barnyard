@@ -32,7 +32,7 @@ function Barns() {
         <div>
             <body>
                 <section>
-                    <h1>my barn?</h1>
+                    <h1>My barn</h1>
                 </section>
                 <Post type="barns"/>
                 <div>
