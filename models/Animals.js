@@ -1,12 +1,11 @@
 const { Schema, model } = require('mongoose');
-const Barn = require('./Barn');
 
 const AnimalSchema = new Schema({
     animalId: {
         type: Schema.Types.ObjectId
     },
     barnId: {
-        type: Barn.barnId
+        type: Number
     },
     name: {
         type: String

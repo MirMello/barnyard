@@ -1,12 +1,11 @@
 const { Schema, model } = require('mongoose');
-const User = require('./User');
 
 const BarnSchema = new Schema({
     barnId: {
         type: Schema.Types.ObjectId
     },
     userId: {
-        type: User.userId
+        type: Number
     },
     barnName: {
         type: String
