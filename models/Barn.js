@@ -1,11 +1,12 @@
 const { Schema, model } = require('mongoose');
+const User = require('./User');
 
 const BarnSchema = new Schema({
     barnId: {
         type: Schema.Types.ObjectId
     },
     userId: {
-        type: Number
+        type: User.userId
     },
     barnName: {
         type: String
@@ -17,3 +18,5 @@ const BarnSchema = new Schema({
         type: subSchema
     }
 });
+
+module.exports = BarnSchema;

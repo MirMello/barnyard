@@ -1,11 +1,12 @@
 const { Schema, model } = require('mongoose');
+const Barn = require('./Barn');
 
 const AnimalSchema = new Schema({
     animalId: {
         type: Schema.Types.ObjectId
     },
     barnId: {
-        type: Number
+        type: Barn.barnId
     },
     name: {
         type: String
@@ -20,3 +21,5 @@ const AnimalSchema = new Schema({
         type: subSchema
     }
 });
+
+module.exports = AnimalSchema;

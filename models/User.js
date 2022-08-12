@@ -20,3 +20,5 @@ const UserSchema = new Schema({
         type: subSchema
     }
 });
+
+module.exports = UserSchema;

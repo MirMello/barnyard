@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-
 const Comment = require('./Comment.js')
 
 const PostsSchema = new Schema({
@@ -23,3 +22,5 @@ const PostsSchema = new Schema({
         default: Comment
     }
 });
+
+module.exports = PostsSchema;
