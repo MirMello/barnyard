@@ -5,7 +5,7 @@ const PostsSchema = new Schema({
     postId: {
         type: Schema.Types.ObjectId
     },
-    parentId: {
+    animalId: {
         type: Number
     },
     picture: {

@@ -1,6 +1,12 @@
 const { Schema, model } = require('mongoose');
 
 const CommentSchema = new Schema({
+  commentId: {
+    type: Schema.Types.ObjectId
+  },
+  animalId: {
+    type: Number
+  },
   writtenBy: {
     type: String
   },
