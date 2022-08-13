@@ -1,4 +1,4 @@
-const {Posts, Animals, Barn} = reqiure('../models');
+const {Posts, Animals} = reqiure('../models');
 
 const postsController = {
     // Get All Posts
@@ -25,14 +25,40 @@ const postsController = {
             .catch(err => res.json(err));
     },
     // Create Post
-    createPost({body}, res) {
-        Barn.create(body)
-            .populate({
-                path: 'animals',
-                select: '-__v'
+    createPost({params, body}, res) {
+        Posts.create(body)
+            .then(({postId}) => {
+                return Animals.findOneAndUpdate(
+                    {animalId: params.animalId},
+                    {$push: {animals: postId}},
+                    {new: true}
+                );
             })
-            .select('-__v')
-            .then(dbBarnData => res.json(dbBarnData))
+            .then(dbAnimalData => {
+                if(!dbAnimalData) {
+                    return res.status(404).json({message: 'No animal with this id found!'});
+                }
+                res.json(dbAnimalData);
+            })
+            .catch(err => res.json(err));
+    },
+    // Update Post
+    updatePost({params, body}, res) {
+        Posts.findOneAndUpdate({postId: params.postId}, body, {new: true, runValidators: true})
+            .then(dbPostData => {
+                if(!dbPostData) {
+                    return res.status(404).json({message: 'No post with this id found!'});
+                }
+                res.json(dbPostData);
+            })
+            .catch(err => res.json(err));
+    },
+    // Delete Post
+    deletePost({params}, res) {
+        Posts.findOneAndDelete({postId: params.postId})
+            .then(dbPostData => res.json(dbPostData))
             .catch(err => res.json(err));
     }
-}
+};
+
+module.exports = postsController;
