@@ -18,7 +18,7 @@ const PostsSchema = new Schema({
         type: Number
     },
     comments: {
-        type: subSchema,
+        type: Schema.Types.ObjectId,
         default: Comment
     }
 });

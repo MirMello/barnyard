@@ -17,7 +17,7 @@ const AnimalSchema = new Schema({
         type: String
     },
     posts: {
-        type: subSchema
+        type: Schema.Types.ObjectId
     }
 });
 
