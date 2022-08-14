@@ -1,0 +1,16 @@
+[
+    { 
+        "barnname" : "MichelleBarn", 
+        "email" : "MichelleBarn@gmail.com", 
+        "password" : "kGjRfUNWUIRwfS_", 
+        "stalls" : [], 
+        "posts" : [] 
+    },
+    { 
+        "barnname" : "MirandaBarn", 
+        "email" : "MirandaBarn@gmail.com", 
+        "password" : "password123", 
+        "stalls" : [], 
+        "posts" : [] 
+    }
+]
