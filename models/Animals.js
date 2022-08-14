@@ -20,3 +20,5 @@ const AnimalSchema = new Schema({
         type: subSchema
     }
 });
+
+module.exports = AnimalSchema;

@@ -17,3 +17,5 @@ const BarnSchema = new Schema({
         type: subSchema
     }
 });
+
+module.exports = BarnSchema;

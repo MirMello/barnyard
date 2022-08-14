@@ -1,12 +1,11 @@
 const { Schema, model } = require('mongoose');
-
 const Comment = require('./Comment.js')
 
 const PostsSchema = new Schema({
     postId: {
         type: Schema.Types.ObjectId
     },
-    parentId: {
+    animalId: {
         type: Number
     },
     picture: {
@@ -23,3 +22,5 @@ const PostsSchema = new Schema({
         default: Comment
     }
 });
+
+module.exports = PostsSchema;
