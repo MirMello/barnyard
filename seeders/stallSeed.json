@@ -1,0 +1,26 @@
+[
+    {
+        "animalName" : "Pepper", 
+        "username" : "MichelleBarn",
+        "gender" : "mare",
+        "stallPosts" : [] 
+    },
+    { 
+        "animalName" : "Daisy", 
+        "username" : "MichelleBarn",
+        "gender" : "mare",
+        "stallPosts" : [] 
+    },
+    {  
+        "animalName" : "Sven", 
+        "username" : "MichelleBarn",
+        "gender" : "stallion",
+        "stallPosts" : [] 
+    },
+    {  
+        "animalName" : "Sprite", 
+        "username" : "MirandaBarn",
+        "gender" : "mare",
+        "stallPosts" : [] 
+    }
+]

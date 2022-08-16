@@ -1,3 +1,5 @@
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 // import logo from './logo.svg';
@@ -11,9 +13,19 @@ import Addanimal from './pages/Addanimal';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
 function App() {
   const [currentPage, setcurrentPage] = useState('Barns')
   return (
+    <ApolloProvider client={client}>
     <div>
       <nav>
         <ul style={{ display: 'flex', listStyle: 'none' }}>
@@ -28,6 +40,7 @@ function App() {
          {currentPage === "Login" && <Login setcurrentPage={setcurrentPage}/>}
          {currentPage === "Signup" && <Signup setcurrentPage={setcurrentPage}/>}
     </div>
+    </ApolloProvider>
   );
 }
 

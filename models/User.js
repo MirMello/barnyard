@@ -17,6 +17,8 @@ const UserSchema = new Schema({
         type: String
     },
     barns: {
-        type: subSchema
+        type: Schema.Types.ObjectId
     }
 });
+
+module.exports = UserSchema;

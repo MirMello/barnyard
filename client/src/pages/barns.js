@@ -1,5 +1,7 @@
 
 import Post from "../components/Post";
+import { useQuery } from '@apollo/client';
+import { QUERY_POSTS } from '../utils/queries';
 
 // function barnPost() {
 //     const [postState, setPostState] = useState({ message: '' });
@@ -26,14 +28,18 @@ import Post from "../components/Post";
 //         }
 //     };
 
+
 function Barns({setcurrentPage}) {
+    const { loading, data } = useQuery(QUERY_POSTS);
+    const posts = data?.posts || [];
+    console.log(posts);
     return (
         <div>
             <body>
                 <section>
                     <h1>My barn</h1>
                 </section>
-                <Post type="barns"/>
+                <Post type="barns" />
                 <div>
                     <button onClick={()=>setcurrentPage('Addanimal')} type="addAnimal">
                         Add Animal
@@ -45,6 +51,11 @@ function Barns({setcurrentPage}) {
                         {/* <li onClick={() => setcurrentStall("Stalls")}>Stall 1</li> */}
                     </ul>
                 </nav>
+                <main>
+                    <div className='flex-row justify-space-between'>
+                        <div className='col-12 mb-3'>{/* PRINT POST LIST */}</div>
+                    </div>
+                </main>
             </body>
         </div>
     )
