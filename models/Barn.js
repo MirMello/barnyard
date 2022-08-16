@@ -1,13 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const BarnSchema = new Schema({
-    barnId: {
+    _barnId: {
         type: Schema.Types.ObjectId
     },
-    userId: {
-        type: Number
-    },
-    barnName: {
+    name: {
         type: String
     },
     animals: {

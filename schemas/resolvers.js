@@ -88,13 +88,13 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addStall: async (parent, { animalId }, context) => {
+    addAnimal: async (parent, { animalId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { stalls: animalId } },
           { new: true }
-        ).populate('stalls');
+        ).populate('animals');
 
         return updatedUser;
       }
