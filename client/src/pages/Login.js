@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { validateEmail } from '../utils/helpers';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 
 function Login({ setcurrentPage }) {
     const [formLogin, setLogin] = useState({ loginEmail: '', loginPassword: '' })
     const [errorMessage, setErrorMessage] = useState('');
     const { loginEmail, loginPassword } = formLogin;
+    const [Login] = useMutation(LOGIN_USER);
 
     // const handleInput = (e) => {
     //     const { name, value } = e.target
@@ -31,6 +35,15 @@ function Login({ setcurrentPage }) {
             formLogin({ ...setLogin, [e.target.name]: e.target.value });
             console.log('Login approved!', formLogin);
         }
+        // try {
+        //     const { data } = await login({
+        //       variables: { ...formState },
+        //     });
+      
+        //     Auth.login(data.login.token);
+        //   } catch (e) {
+        //     console.error(e);
+        //   }
     };
 
 
