@@ -12,7 +12,7 @@ function App() {
   const [currentPage, setcurrentPage] = useState('Barnyard')
   return (
     <div>
-      <nav>
+      <nav class="head-1">
         <ul style={{ display: 'flex', listStyle: 'none' }}>
           <li id='title'>Barnyard</li>
           <button type="login-button">Login</button>

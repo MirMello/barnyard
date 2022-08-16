@@ -29,7 +29,7 @@ import Post from "../components/Post";
 
 function Barns() {
     return (
-        <div>
+        <div class="barns">
             <body>
                 <section>
                     <h1>My barn</h1>
