@@ -30,7 +30,7 @@ import { QUERY_POSTS } from '../utils/queries';
 
 
 function Barns({setcurrentPage}) {
-    const { loading, data } = useQuery(QUERY_POSTS);
+    const { data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
     console.log(posts);
     return (
