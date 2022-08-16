@@ -1,14 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const CommentSchema = new Schema({
-  commentId: {
+  _id: {
     type: Schema.Types.ObjectId
-  },
-  animalId: {
-    type: Number
-  },
-  writtenBy: {
-    type: String
   },
   commentBody: {
     type: String
@@ -16,6 +10,9 @@ const CommentSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  username: {
+    type: String
   }
 });
 
