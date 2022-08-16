@@ -20,3 +20,4 @@ const AnimalSchema = new Schema({
         type: subSchema
     }
 });
+
