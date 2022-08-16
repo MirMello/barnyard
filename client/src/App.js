@@ -1,3 +1,4 @@
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
@@ -8,9 +9,19 @@ import post from './components/Post';
 import Barns from './pages/barns';
 import Stalls from './pages/stalls';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
 function App() {
   const [currentPage, setcurrentPage] = useState('Barnyard')
   return (
+    <ApolloProvider client={client}>
     <div>
       <nav class="head-1">
         <ul style={{ display: 'flex', listStyle: 'none' }}>
@@ -22,6 +33,7 @@ function App() {
       {currentPage === "Stalls" ? <Stalls />
         : <Barns />}
     </div>
+    </ApolloProvider>
   );
 }
 
