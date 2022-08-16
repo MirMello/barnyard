@@ -11,10 +11,10 @@ const BarnSchema = new Schema({
         type: String
     },
     animals: {
-        type: subSchema
+        type: Schema.Types.ObjectId
     },
     posts: {
-        type: subSchema
+        type: Schema.Types.ObjectId
     }
 });
 
