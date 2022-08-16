@@ -1,19 +1,13 @@
 const { Schema, model } = require('mongoose');
 
 const AnimalSchema = new Schema({
-    animalId: {
+    _animalId: {
         type: Schema.Types.ObjectId
-    },
-    barnId: {
-        type: Number
     },
     name: {
         type: String
     },
     gender: {
-        type: String
-    },
-    picture: {
         type: String
     },
     posts: {

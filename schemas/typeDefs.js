@@ -5,13 +5,21 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    stallCount: Int
-    posts: [Post]
-    stalls: [User]
+    barnCount: Int
+    barns: [Barn]
   }
 
-  type Stall {
+  type Barn {
+    _barnId: ID
+    name: String
+    animals: [Animal]
+    posts: [Post]
+  }
+
+  type Animal {
     _animalId: ID
+    name: String
+    gender: String
     posts: [Post]
   }
 
