@@ -1,5 +1,4 @@
-import Header from "../components/header";
-import React from 'react';
+
 import Post from "../components/Post";
 
 // function barnPost() {
@@ -27,7 +26,7 @@ import Post from "../components/Post";
 //         }
 //     };
 
-function Barns() {
+function Barns({setcurrentPage}) {
     return (
         <div>
             <body>
@@ -36,14 +35,8 @@ function Barns() {
                 </section>
                 <Post type="barns"/>
                 <div>
-                    <button type="addAnimal">
+                    <button onClick={()=>setcurrentPage('Addanimal')} type="addAnimal">
                         Add Animal
-                    </button>
-                    <button type="viewEvents">
-                        View Events
-                    </button>
-                    <button type="viewPictures">
-                        View Pictures
                     </button>
                 </div>
                 <nav>
