@@ -5,19 +5,18 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    barnCount: Int
     barns: [Barn]
   }
 
   type Barn {
-    _barnId: ID
+    _id: ID
     name: String
     animals: [Animal]
     posts: [Post]
   }
 
   type Animal {
-    _animalId: ID
+    _id: ID
     name: String
     gender: String
     posts: [Post]
@@ -57,7 +56,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addPost(postText: String!): Post
     addComment(CommentId: ID!, commentBody: String!): Post
-    addStall(animalId: ID!): User
+    addAnimal(animalId: ID!): User
   }
 `;
 

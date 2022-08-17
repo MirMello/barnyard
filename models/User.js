@@ -17,8 +17,11 @@ const UserSchema = new Schema({
         type: Number
     },
     barns: {
-        type: Schema.Types.ObjectId
+        type: [Schema.Types.ObjectId],
+        default: []
     }
 });
 
-module.exports = UserSchema;
+const User = model('User', UserSchema);
+
+module.exports = User;
