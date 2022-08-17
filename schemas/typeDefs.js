@@ -27,7 +27,6 @@ const typeDefs = gql`
     postText: String
     createdAt: String
     username: String
-    commentCount: Int
     comments: [Comment]
   }
 
