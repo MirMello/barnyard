@@ -15,4 +15,6 @@ const AnimalSchema = new Schema({
     }
 });
 
+
 module.exports = AnimalSchema;
+

@@ -1,5 +1,4 @@
-import Header from "../components/header";
-import React from 'react';
+
 import Post from "../components/Post";
 import { useQuery } from '@apollo/client';
 import { QUERY_POSTS } from '../utils/queries';
@@ -29,8 +28,9 @@ import { QUERY_POSTS } from '../utils/queries';
 //         }
 //     };
 
-function Barns() {
-    const { loading, data } = useQuery(QUERY_POSTS);
+
+function Barns({setcurrentPage}) {
+    const { data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
     console.log(posts);
     return (
@@ -41,14 +41,8 @@ function Barns() {
                 </section>
                 <Post type="barns" />
                 <div>
-                    <button type="addAnimal">
+                    <button onClick={()=>setcurrentPage('Addanimal')} type="addAnimal">
                         Add Animal
-                    </button>
-                    <button type="viewEvents">
-                        View Events
-                    </button>
-                    <button type="viewPictures">
-                        View Pictures
                     </button>
                 </div>
                 <nav>
