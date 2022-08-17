@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const AnimalSchema = new Schema({
-    _animalId: {
+    _id: {
         type: Schema.Types.ObjectId
     },
     name: {
@@ -14,7 +14,7 @@ const AnimalSchema = new Schema({
         type: Schema.Types.ObjectId
     }
 });
+const Animal = model('Animal', AnimalSchema);
 
 
 module.exports = AnimalSchema;
-

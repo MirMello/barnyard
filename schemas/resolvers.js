@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Posts, Animals, Barn, Comment } = require('../models');
+const { User, Posts, Barn } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -8,8 +8,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          .populate('posts')
-          .populate('stalls');
+            .populate('username')
 
         return userData;
       }
@@ -19,29 +18,27 @@ const resolvers = {
     users: async () => {
       return User.find()
         .select('-__v -password')
-        .populate('posts')
-        .populate('stalls');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
-        .populate('stalls')
-        .populate('posts');
     },
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return post.find(params).sort({ createdAt: -1 });
+      return Posts.find(params).sort({ createdAt: -1 });
     },
     post: async (parent, { _id }) => {
-      return post.findOne({ _id });
+      return Posts.findOne({ _id });
     }
   },
 
   Mutation: {
     addUser: async (parent, args) => {
+      console.log('Hello World')
       const user = await User.create(args);
       const token = signToken(user);
-
+      // const barn = await Barn.create({name: user.username + "'s Barn", userId: user._id});
+      console.log(user);
       return { token, user };
     },
     login: async (parent, { email, password }) => {
@@ -77,7 +74,7 @@ const resolvers = {
     },
     addComment: async (parent, { postId, commentBody }, context) => {
       if (context.user) {
-        const updatedpost = await post.findOneAndUpdate(
+        const updatedpost = await Posts.findOneAndUpdate(
           { _id: postId },
           { $push: { comments: { commentBody, username: context.user.username } } },
           { new: true, runValidators: true }
@@ -92,7 +89,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { stalls: animalId } },
+          { $addToSet: { barns: animalId } },
           { new: true }
         ).populate('animals');
 
