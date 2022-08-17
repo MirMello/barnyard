@@ -8,8 +8,7 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          .populate('posts')
-          .populate('stalls');
+            .populate('username')
 
         return userData;
       }
@@ -19,14 +18,10 @@ const resolvers = {
     users: async () => {
       return User.find()
         .select('-__v -password')
-        .populate('posts')
-        .populate('stalls');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
-        .populate('stalls')
-        .populate('posts');
     },
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -39,10 +34,11 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, args) => {
+      console.log('Hello World')
       const user = await User.create(args);
       const token = signToken(user);
-      const barn = await Barn.create({name: user.username + "'s Barn", userId: user._id});
-
+      // const barn = await Barn.create({name: user.username + "'s Barn", userId: user._id});
+      console.log(user);
       return { token, user };
     },
     login: async (parent, { email, password }) => {
@@ -93,7 +89,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { stalls: animalId } },
+          { $addToSet: { barns: animalId } },
           { new: true }
         ).populate('animals');
 
