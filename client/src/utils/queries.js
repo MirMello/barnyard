@@ -2,7 +2,14 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_ANIMALS = gql`
-query 
+query animals($username: String){
+  animals(username: $username){
+    _id
+    name 
+    gender
+    posts
+  }
+}
 `
 
 export const QUERY_POSTS = gql`

@@ -4,20 +4,18 @@ import { validateName } from '../utils/helpers';
 import { ADD_ANIMAL } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { useMutation, useQuery } from '@apollo/client'
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import { QUERY_ANIMALS , QUERY_POSTS} from '../utils/queries';
-import Stalls from '../pages/stalls';
+import Stalls from './Stalls';
 
 
 function Addanimal({ setcurrentPage }) {
     const [formState, setFormState] = useState({ name: '', gender: '' });
     const [errorMessage, setErrorMessage] = useState('');
     const { name, gender } = formState;
-    const { username: userParam } = useParams();
+    //const { username: userParam } = useParams();
     const [addAnimal] = useMutation(ADD_ANIMAL);
-    const { loading, data } = useQuery(userParam ? QUERY_ANIMALS : QUERY_POSTS, {
-        variables: { username: userParam },
-    });
+    const { loading, data } = useQuery( QUERY_ANIMALS );
 
     const handleChange = (e) => {
         if (e.target.name === 'name') {
@@ -40,26 +38,28 @@ function Addanimal({ setcurrentPage }) {
         }
     };
 
-    const submitAnimal = (props) => {
+    const submitAnimal = (e) => {
+        e.preventDefault()
+        addAnimal(name, gender)
 
-        const user = data?.me || data?.user || {};
+        // const user = data?.me || data?.user || {};
 
-        if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-            return <Stalls to="/Barns" />;
-        }
+        // if (Auth.loggedIn()) {
+        //     return <Stalls to="/Barns" />;
+        // }
 
-        if (loading) {
-            return <div>Loading...</div>;
-        }
+        // if (loading) {
+        //     return <div>Loading...</div>;
+        // }
 
-        if (!user?.username) {
-            return (
-                <h4>
-                    You need to be logged in to see this. Use the navigation links above to
-                    sign up or log in!
-                </h4>
-            );
-        }
+        // if (!user?.username) {
+        //     return (
+        //         <h4>
+        //             You need to be logged in to see this. Use the navigation links above to
+        //             sign up or log in!
+        //         </h4>
+        //     );
+        // }
         // const handleChange = async () => {
         //     try {
         //         await addAnimal({
@@ -75,10 +75,10 @@ function Addanimal({ setcurrentPage }) {
     return (
         <div>
             <Header title="Add your Animal" />
-            <body>
+     
                 <section>
                     <h3>Add Animal:</h3>
-                    <form id="animal-form" method="post">
+                    <form id="animal-form">
                         <div>
                             <label for="name">Name:</label>
                             <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
@@ -97,7 +97,7 @@ function Addanimal({ setcurrentPage }) {
                         </div>
                     </form>
                 </section>
-            </body>
+          
         </div>
     )
 }

@@ -9,7 +9,7 @@ function Login({ setcurrentPage }) {
     const [formLogin, setLogin] = useState({ loginEmail: '', loginPassword: '' })
     const [errorMessage, setErrorMessage] = useState('');
     const { loginEmail, loginPassword } = formLogin;
-    const [Login] = useMutation(LOGIN_USER);
+    //const [Login] = useMutation(LOGIN_USER);
 
     // const handleInput = (e) => {
     //     const { name, value } = e.target
