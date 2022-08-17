@@ -19,4 +19,3 @@ const AnimalSchema = new Schema({
 const Animal = model('Animal', AnimalSchema);
 
 module.exports = Animal;
-
