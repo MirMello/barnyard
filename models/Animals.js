@@ -15,6 +15,12 @@ const AnimalSchema = new Schema({
     }
 });
 
+<<<<<<< HEAD
+
+module.exports = AnimalSchema;
+
+=======
 const Animal = model('Animal', AnimalSchema);
 
 module.exports = Animal;
+>>>>>>> main
