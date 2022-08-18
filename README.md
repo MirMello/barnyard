@@ -1,5 +1,7 @@
 # Barnyard
 
+https://barnyardproject.herokuapp.com/
+
 ## Description
 An app that for those with farm animals to connect to others in the community.
 
@@ -8,7 +10,7 @@ An app that for those with farm animals to connect to others in the community.
 * Express.js
 * Node.js
 * MongoDB
-* MVC Layout
+* MERN
 * Heroku
 
 ## Installation Instructions

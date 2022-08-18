@@ -31,7 +31,7 @@ function Post({type}) {
     return (
         <div>
             <Header title={`${type=== 'barns'?"Post in your Barnyard":"Post in your Stall"}`} />
-            <div>
+            <div class="post">
                 <h3>Create a Post:</h3>
                 <div>
                     <label for="message">Message:</label>

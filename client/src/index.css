@@ -1,13 +1,150 @@
-body {
+:root {
+  --primary-color: #d4a55d;
+  --secondary-color: #507661;
+  --tertiary-color: #ee593f;
+  --color-four: #9ac9db;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body-1 {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* padding: 20px 35px; */
+  /* background-color: var(--tertiary-color); */
+}
+
+.head-1 {
+  padding: 20px 35px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-four);
+  width: 100%;
+}
+
+.head-1 ul {
+  display: block;
+  /* padding: 0, 30px; */
+  font-weight: bold;
+  font-size: 36px;
+  color: var(--primary-color);
+  padding: 5px;
+  width: 100%;
+  margin: 0;
+}
+
+.head-1 ul li {
+  display: inline;
+}
+
+.menu-items {
+  float: right;
+  margin-left: 10px;
+}
+
+#logo {
+
+}
+
+.barns {
+  padding: 35px;
+  display: flex;
+  width: 100%;
+}
+
+.barns section {
+  flex: 100%;
+}
+
+.head-1 button {
+  /* position: relative;
+  left: 40px; */
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.sign-up,.login {
+  margin-top: -10px;
+
+}
+
+.sign-up {
+
+}
+
+.login{
+
+}
+
+.head-1 button:hover {
+  background-color: var(--tertiary-color);
+}
+
+.barns body section h1 {
+  font-size: 33px;
+}
+
+.button-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-list button {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.button-list button:hover {
+  background-color: var(--tertiary-color);
+}
+
+.post {
+  /* background-color: var(--color-four); */
+}
+
+.post button {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.post button:hover {
+  background-color: var(--tertiary-color);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+
+
+
+
+
+

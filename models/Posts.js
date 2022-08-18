@@ -13,15 +13,15 @@ const PostsSchema = new Schema({
         default: Date.now
     },
     username: {
-        type: String
-    },
-    commentCount: {
-        type: Number
+        type: String,
+        required: true
     },
     comments: {
-        type: Schema.Types.ObjectId,
-        default: Comment
+        type: [Comment],
+        default: []
     }
 });
 
-module.exports = PostsSchema;
+const Post = model('Post', PostsSchema);
+
+module.exports = Post;
