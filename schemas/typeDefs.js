@@ -1,61 +1,30 @@
 const { gql } = require('apollo-server-express');
-
+//This is not complete models needs to be finish first
 const typeDefs = gql`
-  type User {
+  type animals {
     _id: ID
-    username: String
-    email: String
-    barns: [Barn]
-  }
-
-  type Barn {
-    _id: ID
-    name: String
-    animals: [Animal]
-    posts: [Post]
-  }
-
-  type Animal {
-    _id: ID
-    name: String
-    gender: String
-    posts: [Post]
-  }
-
-  type Post {
-    _id: ID
-    postText: String
+    thoughtText: String
+    thoughtAuthor: String
     createdAt: String
-    username: String
-    comments: [Comment]
+    comments: [Comment]!
   }
 
   type Comment {
     _id: ID
-    commentBody: String
+    commentText: String
     createdAt: String
-    username: String
-  }
-
-  type Auth {
-    token: ID!
-    user: User
   }
 
   type Query {
-    me: User
-    users: [User]
-    user(username: String!): User
-    posts(username: String): [Post]
-    post(_id: ID!): Post
+    thoughts: [Thought]!
+    thought(thoughtId: ID!): Thought
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
-    addPost(postText: String!): Post
-    addComment(CommentId: ID!, commentBody: String!): Post
-    addAnimal(animalId: ID!): User
+    addThought(thoughtText: String!, thoughtAuthor: String!): Thought
+    addComment(thoughtId: ID!, commentText: String!): Thought
+    removeThought(thoughtId: ID!): Thought
+    removeComment(thoughtId: ID!, commentId: ID!): Thought
   }
 `;
 
