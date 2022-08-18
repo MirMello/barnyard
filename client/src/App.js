@@ -7,11 +7,11 @@ import { useState } from 'react';
 // import Events from './components/Events';
 // import pictures from './components/pictures';
 // import Post from './components/Post';
-import Barns from './pages/Barns';
-import Stalls from './pages/Stalls';
+import Barns from './pages/barns';
+import Stalls from './pages/stalls';
 import Addanimal from './pages/Addanimal';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Signup from './pages/signup';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
