@@ -23,11 +23,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <div>
-      <nav>
-        <ul style={{ display: 'flex', listStyle: 'none' }}>
-          <li id='title'>Barnyard</li>
-          <button type="login-button">Login</button>
-          <button type="sign-up-button">Sign Up</button>
+      <nav class="head-1">
+        <ul>
+          <li id='title'><span id="logo">Barnyard</span></li>
+          <li class="menu-items"><button class="sign-up" type="sign-up-button">Sign Up</button></li>
+          <li class="menu-items"><button class="login" type="login-button">Login</button></li>
         </ul>
       </nav>
       {currentPage === "Stalls" ? <Stalls />
