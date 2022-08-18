@@ -35,12 +35,9 @@ function Barns() {
     console.log(posts);
     return (
         <div class="barns">
-            <body>
-                <section>
-                    <h1>My barn</h1>
-                </section>
-                <Post type="barns" />
-                <div>
+            <section>
+                <h1>My barn</h1>
+                <div class="button-list">
                     <button type="addAnimal">
                         Add Animal
                     </button>
@@ -57,12 +54,15 @@ function Barns() {
                         {/* <li onClick={() => setcurrentStall("Stalls")}>Stall 1</li> */}
                     </ul>
                 </nav>
+            </section>
+            <section>
+                <Post type="barns" />
                 <main>
                     <div className='flex-row justify-space-between'>
                         <div className='col-12 mb-3'>{/* PRINT POST LIST */}</div>
                     </div>
                 </main>
-            </body>
+            </section>
         </div>
     )
 }

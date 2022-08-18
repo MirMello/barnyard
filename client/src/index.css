@@ -21,45 +21,73 @@
 
   /* padding: 20px 35px; */
   /* background-color: var(--tertiary-color); */
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  z-index: 9999;
 }
 
 .head-1 {
   padding: 20px 35px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: var(--color-four);
-  width: 700%;
+  width: 100%;
 }
 
 .head-1 ul {
+  display: block;
   /* padding: 0, 30px; */
   font-weight: bold;
   font-size: 36px;
   color: var(--primary-color);
+  padding: 5px;
+  width: 100%;
   margin: 0;
 }
 
+.head-1 ul li {
+  display: inline;
+}
+
+.menu-items {
+  float: right;
+  margin-left: 10px;
+}
+
+#logo {
+
+}
+
 .barns {
-  padding: 35px
+  padding: 35px;
+  display: flex;
+  width: 100%;
+}
+
+.barns section {
+  flex: 100%;
 }
 
 .head-1 button {
-  position: relative;
-  left: 40px;
+  /* position: relative;
+  left: 40px; */
   color: var(--primary-color);
   background-color: var(--secondary-color);
   border: none;
   padding: 7px 20px;
   font-size: 16px;
   border-radius: 10px;
+}
+
+.sign-up,.login {
+  margin-top: -10px;
+
+}
+
+.sign-up {
+
+}
+
+.login{
+
 }
 
 .head-1 button:hover {
@@ -70,7 +98,53 @@
   font-size: 33px;
 }
 
+.button-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-list button {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.button-list button:hover {
+  background-color: var(--tertiary-color);
+}
+
+.post {
+  /* background-color: var(--color-four); */
+}
+
+.post button {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.post button:hover {
+  background-color: var(--tertiary-color);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+
+
+
+
+
+
