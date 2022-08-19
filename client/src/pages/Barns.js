@@ -59,6 +59,6 @@ function Barns({setcurrentPage}) {
             </body>
         </div>
     )
-}
+};
 
 export default Barns;

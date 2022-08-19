@@ -1,57 +1,96 @@
 import { useState } from "react"
-import { validateSignup } from '../utils/helpers';
+// import { validateSignup } from '../utils/helpers';
+import Auth from "../utils/auth"
+import ADD_USER from "../utils/mutations";
+
 function Signup({setcurrentPage}) {
-    const [formSignup, setSignup] = useState({ signupName: '', signupEmail: '', signupPassword: '' })
-    const [errorMessage, setErrorMessage] = useState('');
-    const { signupName, signupEmail, signupPassword } = formSignup;
-    // const handleInput = (e) => {
-    //     const { name, value } = e.target
-    //     setSignup(prev => ({ ...prev, [name]: value }))
-    // }
-    const handleInput = (e) => {
-        if (e.target.name === 'signupEmail') {
-            const isValid = validateSignup(e.target.value);
-            if (!isValid) {
-                setErrorMessage('Your email is invalid.');
-            } else {
-                setErrorMessage('');
-            }
-        } else {
-            if (!e.target.value.length) {
-                setErrorMessage(`${e.target.email} is required.`);
-            } else {
-                setErrorMessage('');
-            }
-        }
-        if (!errorMessage) {
-            formSignup({ ...setSignup, [e.target.name]: e.target.value });
-            console.log('Signup approved!', formSignup);
-        }
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [addUser, { error }] = useMutation(ADD_USER);
+  
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+  
+      if (error) {
+        console.log(Object.values(error));
+      }
+  
+      try {
+        const mutationResponse = await addUser({
+          variables: {
+            email: formState.email,
+            password: formState.password,
+            firstName: formState.firstName,
+            lastName: formState.lastName,
+          },
+        });
+        const token = mutationResponse.data.addUser.token;
+        Auth.login(token);
+      } catch (e) {
+        console.log(error);
+      }
     };
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+      };
+     
+    
+    };  
     return (
-        <div>
-            <h1>Sign up !</h1>
-            <div>
-                <label for="signupName">Name:</label>
-                <input name='signupName' type='text' value={signupName.name} onChange={handleInput}></input>
-            </div>
-            <div>
-                <label for="signupEmail">Email:</label>
-                <input name='signupEmail' type='text' value={signupEmail.email} onChange={handleInput}></input>
-            </div>
-            <div>
-                <label for="signupPassword">Password:</label>
-                <input name='signupPassword' type='text' value={signupPassword.password} onChange={handleInput}></input>
-            </div>
-            <div>
-                <button onClick={Signup}>
-                    Signup
-                </button>
-                <button onClick={()=>setcurrentPage('Barns')} type="Barns">
-                    Back
-                </button>
-            </div>
+        <div className="signup">
+      <h4>Sign-Up</h4>
+      <form onSubmit={handleFormSubmit}>
+        <div className="text_area">
+          <input
+            type="firstName"
+            id="firstName"
+            name="firstName"
+            placeholder="First Name"
+            onChange={handleChange}
+            className="text_input"
+          />
         </div>
+        <div className="text_area">
+          <input
+            type="lastName"
+            id="lastName"
+            name="lastName"
+            placeholder="Last Name"
+            onChange={handleChange}
+            className="text_input"
+          />
+          </div>
+          <div className="text_area">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            className="text_input"
+          />
+        </div>
+        <div className="text_area">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+            className="text_input"
+          />
+        </div>
+        <input type="submit" value="SIGN UP" className="btn" />
+      </form>
+      <a className="link" href="/login">
+        Login
+      </a>
+    </div>
+
+
     )
 }
 export default Signup;
