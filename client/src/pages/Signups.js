@@ -91,6 +91,6 @@ function Signup({setcurrentPage}) {
     </div>
 
 
-    )
-}
+)
+
 export default Signup;
