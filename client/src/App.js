@@ -11,7 +11,7 @@ import Barns from './pages/Barns';
 import Stalls from './pages/Stalls';
 import Addanimal from './pages/Addanimal';
 import Login from './pages/Login';
-import Signup from './pages/Signups';
+import Signup from './pages/Signup';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
