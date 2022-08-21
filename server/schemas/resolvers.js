@@ -34,12 +34,16 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, args) => {
+      try {
       console.log('Hello World')
       const user = await User.create(args);
       const token = signToken(user);
       // const barn = await Barn.create({name: user.username + "'s Barn", userId: user._id});
       console.log(user);
       return { token, user };
+      } catch(error){
+        console.log(error)
+      }
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

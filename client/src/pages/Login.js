@@ -32,7 +32,7 @@ function Login({ setcurrentPage }) {
             }
         }
         if (!errorMessage) {
-            formLogin({ ...setLogin, [e.target.name]: e.target.value });
+            setLogin({ ...formLogin, [e.target.name]: e.target.value });
             console.log('Login approved!', formLogin);
         }
         // try {
