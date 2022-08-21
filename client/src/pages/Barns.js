@@ -29,34 +29,34 @@ import { QUERY_POSTS } from '../utils/queries';
 //     };
 
 
-function Barns({setcurrentPage}) {
+function Barns({ setcurrentPage }) {
     const { data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
     console.log(posts);
     return (
-        <div>
-            <body>
+        <div className="container">
+
+            {/* column one */}
+            <body className="barn">
                 <section>
-                    <h1>My barn</h1>
+                    <h1>My Barn</h1>
                 </section>
                 <Post type="barns" />
+            </body>
+
+            {/* column two */}
+            <nav className="stallNav">
+                <h2>Go to Stalls:</h2>
+                <ul style={{ display: 'flex', listStyle: 'none' }}>
+                    {/* <li onClick={() => setcurrentStall("Stalls")}>Stall 1</li> */}
+                </ul>
                 <div>
-                    <button onClick={()=>setcurrentPage('Addanimal')} type="addAnimal">
+                    <button onClick={() => setcurrentPage('addAnimal')} type="addAnimal">
                         Add Animal
                     </button>
                 </div>
-                <nav>
-                    <h2>Go to Stalls:</h2>
-                    <ul style={{ display: 'flex', listStyle: 'none' }}>
-                        {/* <li onClick={() => setcurrentStall("Stalls")}>Stall 1</li> */}
-                    </ul>
-                </nav>
-                <main>
-                    <div className='flex-row justify-space-between'>
-                        <div className='col-12 mb-3'>{/* PRINT POST LIST */}</div>
-                    </div>
-                </main>
-            </body>
+            </nav>
+
         </div>
     )
 };

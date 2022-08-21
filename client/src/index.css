@@ -9,9 +9,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid black; */
+ 
 }
 
-.body-1 {
+/* .body-1 {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -20,9 +22,19 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* padding: 20px 35px; */
-  /* background-color: var(--tertiary-color); */
+  /* background-color: var(--tertiary-color);
+} */
+
+.navbar {
+  padding: 30px;
+  background-color: var(--color-four);
+  font-family: Cantarell;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .navbar {
   padding: 30px;
   background-color: var(--color-four);
@@ -35,115 +47,207 @@
 }
 
 .head-1 {
+=======
+.navbar h1 {
+  color: var(--tertiary-color);
+  font-size: 60px;
+}
+
+.navbar ul {
+
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.login {
+  margin-left: 35px;
+  padding: 25px 0 25px 0;
+  font-family: Cantarell;
+}
+
+.login label {
+  margin: 50px 0 20px 20px;
+  padding: 20px;
+}
+
+.login button {
+  margin-top: 25px;
+  margin-right: 15px;
+}
+
+.loginbtns {
+  
+  gap: 5px;
+}
+
+.signup {
+  margin-left: 35px;
+  padding: 25px 0 25px 0;
+  font-family: Cantarell;
+}
+
+.signup input {
+  display: flex;
+  margin: 5px;
+  padding: 10px;
+  background-color: var(--color-four);
+}
+
+.signup .btn {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.signup a {
+  margin: 135px;
+  text-decoration: none;
+  font-size: 23px;
+  color: var(--tertiary-color);
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px
+}
+
+.barn {
+  margin-left: 35px;
+  padding: 25px 0 25px 0;
+  font-family: Cantarell;
+  width: 75%;
+}
+
+.barn h1 {
+  font-size: 40px;
+}
+
+.post {
+  display: flex;
+ margin-top: 15px;
+ gap: 1rem;
+}
+
+.textbox {
+  width: 100%;
+}
+
+.textbox textarea {
+  width: 100%;
+  height:100%;
+}
+
+.feed {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.stallNav {
+  margin-top: 35px;
+  margin-right: 35px;
+  width: 25%;
+  position: sticky;
+}
+
+/* .head-1 {
+>>>>>>> 70e8e379e739d18484c142da0594a86f6976cf46
   padding: 20px 35px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: var(--color-four);
   width: 100%;
-}
+} */
 
-.head-1 ul {
+/* .head-1 ul {
   display: block;
-  /* padding: 0, 30px; */
+  /* padding: 0, 30px;
   font-weight: bold;
   font-size: 36px;
   color: var(--primary-color);
   padding: 5px;
   width: 100%;
   margin: 0;
-}
+} */
 
-.head-1 ul li {
+/* .head-1 ul li {
   display: inline;
-}
+} */
 
-.menu-items {
+/* .menu-items {
   float: right;
   margin-left: 10px;
-}
+} */
 
-#logo {
-
-}
-
-.barns {
+/* .barns {
   padding: 35px;
   display: flex;
   width: 100%;
-}
+} */
 
-.barns section {
+/* .barns section {
   flex: 100%;
-}
+} */
 
-.head-1 button {
+button {
   /* position: relative;
   left: 40px; */
   color: var(--primary-color);
   background-color: var(--secondary-color);
+  text-decoration: none;
   border: none;
   padding: 7px 20px;
   font-size: 16px;
   border-radius: 10px;
 }
 
-.sign-up,.login {
-  margin-top: -10px;
-
-}
-
-.sign-up {
-
-}
-
-.login{
-
-}
-
-.head-1 button:hover {
+button:hover {
   background-color: var(--tertiary-color);
 }
 
-.barns body section h1 {
+/* .barns body section h1 {
   font-size: 33px;
-}
+} */
 
-.button-list {
+/* .button-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
+} */
 
-.button-list button {
+/* .button-list button {
   color: var(--primary-color);
   background-color: var(--secondary-color);
   border: none;
   padding: 7px 20px;
   font-size: 16px;
   border-radius: 10px;
-}
+} */
 
-.button-list button:hover {
+/* .button-list button:hover {
   background-color: var(--tertiary-color);
-}
+} */
 
-.post {
-  /* background-color: var(--color-four); */
-}
+/* .post {
+  /* background-color: var(--color-four); 
+} */
 
-.post button {
+/* .post button {
   color: var(--primary-color);
   background-color: var(--secondary-color);
   border: none;
   padding: 7px 20px;
   font-size: 16px;
   border-radius: 10px;
-}
+} */
 
-.post button:hover {
+/* .post button:hover {
   background-color: var(--tertiary-color);
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
