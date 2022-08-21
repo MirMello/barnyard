@@ -31,11 +31,11 @@ function Post({type}) {
     return (
         <div>
             <Header title={`${type=== 'barns'?"Post in your Barnyard":"Post in your Stall"}`} />
-            <div class="post">
-                <h3>Create a Post:</h3>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} />
+            <div className="post">
+                
+                <div className="textbox">
+                    <label for="message"></label>
+                    <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} placeholder=" Create post"/>
                 </div>
                 {errorMessage && (
                     <div>
@@ -46,9 +46,9 @@ function Post({type}) {
                     Submit
                 </button>
             </div>
-            <section>
+            <section className="feed">
                 <h3>Post Feed:</h3>
-                <div>
+                <div className="textbox">
                     <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} />
                 </div>
                 {errorMessage && (
