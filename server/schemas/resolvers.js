@@ -42,11 +42,12 @@ const resolvers = {
       console.log(user);
       return { token, user };
       } catch(error){
-        console.log(error)
+        console.log(error);
       }
     },
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+      console.log('Hello World')
+     try { const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
@@ -60,6 +61,9 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    } catch(error){
+      console.log(error);
+    }
     },
     addPost: async (parent, args, context) => {
       if (context.user) {

@@ -9,7 +9,7 @@ function Login({ setcurrentPage }) {
     const [formLogin, setLogin] = useState({ loginEmail: '', loginPassword: '' })
     const [errorMessage, setErrorMessage] = useState('');
     const { loginEmail, loginPassword } = formLogin;
-    //const [Login] = useMutation(LOGIN_USER);
+    const [newLogin] = useMutation(LOGIN_USER);
 
     // const handleInput = (e) => {
     //     const { name, value } = e.target
@@ -46,6 +46,22 @@ function Login({ setcurrentPage }) {
         //   }
     };
 
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+    
+        console.log(formLogin);
+        try {
+          const { data } = await newLogin({
+            variables: {
+                email: formLogin.loginEmail, password: formLogin.loginPassword },
+          });
+          console.log(data);
+          Auth.login(data.addUser.token);
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
 
     return (
         <div>
@@ -59,7 +75,7 @@ function Login({ setcurrentPage }) {
                 <input name='loginPassword' type='text' value={loginPassword.password} onChange={handleInput}></input>
             </div>
             <div>
-                <button onClick={Login}>
+                <button onClick={handleFormSubmit}>
                     Login
                 </button>
                 <button onClick={() => setcurrentPage('Barns')} type="Barns">
