@@ -34,6 +34,10 @@
   font-size: 50px; 
 }
 
+.navbar li {
+  color: var(--tertiary-color);
+}
+
 .navbar a {
   display: flex;
   position: relative;
@@ -64,8 +68,26 @@
   font-family: Cantarell;
 }
 
+.signup input {
+  display: flex;
+  margin: 5px;
+  padding: 10px;
+  background-color: var(--color-four);
+}
+
+.signup .btn {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
 .signup a {
+  margin: 135px;
   text-decoration: none;
+  font-size: 23px;
   color: var(--tertiary-color);
 }
 
@@ -113,13 +135,14 @@ button {
   left: 40px; */
   color: var(--primary-color);
   background-color: var(--secondary-color);
+  text-decoration: none;
   border: none;
   padding: 7px 20px;
   font-size: 16px;
   border-radius: 10px;
 }
 
-.head-1 button:hover {
+button:hover {
   background-color: var(--tertiary-color);
 }
 
