@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Navbar(){
     return(
-        <nav classname= "navbar">
+        <nav className= "navbar">
         <ul style={{ display: 'flex', listStyle: 'none' }}>
           <li id='title'>Barnyard</li>
           <a href='/login'><button type="button">Login</button></a>

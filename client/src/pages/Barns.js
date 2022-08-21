@@ -37,7 +37,7 @@ function Barns({setcurrentPage}) {
         <div>
             <body>
                 <section>
-                    <h1>My barn</h1>
+                    <h1 className= "mybarn">My barn</h1>
                 </section>
                 <Post type="barns" />
                 <div>

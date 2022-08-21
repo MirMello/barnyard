@@ -26,12 +26,47 @@
 .navbar {
   padding: 30px;
   background-color: var(--color-four);
+
 }
 
 .navbar ul {
   font-family: Cantarell;
   font-size: 50px; 
-  justify-content: space-between;
+}
+
+.navbar a {
+  display: flex;
+  position: relative;
+  left: 35%;
+  margin-right: 10px;
+}
+
+
+.login {
+  margin-left: 35px;
+  padding: 25px 0 25px 0;
+  font-family: Cantarell;
+}
+
+.login label {
+  margin: 50px 0 20px 20px;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.login button {
+  margin-top: 25px;
+}
+
+.signup {
+  margin-left: 35px;
+  padding: 25px 0 25px 0;
+  font-family: Cantarell;
+}
+
+.signup a {
+  text-decoration: none;
+  color: var(--tertiary-color);
 }
 
 .head-1 {
@@ -63,10 +98,6 @@
   margin-left: 10px;
 }
 
-#logo {
-
-}
-
 .barns {
   padding: 35px;
   display: flex;
@@ -77,7 +108,7 @@
   flex: 100%;
 }
 
-.head-1 button {
+button {
   /* position: relative;
   left: 40px; */
   color: var(--primary-color);
@@ -86,19 +117,6 @@
   padding: 7px 20px;
   font-size: 16px;
   border-radius: 10px;
-}
-
-.sign-up,.login {
-  margin-top: -10px;
-
-}
-
-.sign-up {
-
-}
-
-.login{
-
 }
 
 .head-1 button:hover {
