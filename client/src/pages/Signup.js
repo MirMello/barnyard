@@ -39,7 +39,7 @@ export default function Signup() {
 
   return ( 
     <div className="signup">
-      <h4>Sign-Up</h4>
+      <h1>Sign-Up</h1>
       <form onSubmit={handleFormSubmit}>
         <input
           type="text"
