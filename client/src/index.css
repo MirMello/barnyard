@@ -23,6 +23,17 @@
   /* background-color: var(--tertiary-color); */
 }
 
+.navbar {
+  padding: 30px;
+  background-color: var(--color-four);
+}
+
+.navbar ul {
+  font-family: Cantarell;
+  font-size: 50px; 
+  justify-content: space-between;
+}
+
 .head-1 {
   padding: 20px 35px;
   position: -webkit-sticky;
