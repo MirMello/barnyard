@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const PostsSchema = new Schema({
-    _id: {
+    id: {
         type: Schema.Types.ObjectId
     },
     postText: {

@@ -54,13 +54,6 @@ function Barns({ setcurrentPage }) {
                         Add Animal
                     </button>
                 </div>
-
-                <nav>
-                    <h2>Go to Stalls:</h2>
-                    <ul style={{ display: 'flex', listStyle: 'none' }}>
-                        {/* <li onClick={() => setcurrentStall("Stalls")}>Stall 1</li> */}
-                    </ul>
-                </nav>
             </nav>
         </body>
     </div>

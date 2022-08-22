@@ -85,30 +85,35 @@ const resolvers = {
     }
     },
     addBarn: async (parent, args, context) => {
-      if (context.user) {
-        const barn = await barn.create({...args, username: context.user.username});
+     // if (!context.user) {
+        console.log(context.user);
+        const barn = await Barn.create({...args})//context.user.username});
+        console.log(barn);
+        // await User.findByIdAndUpdate(
+        //   { _id: context.user._id },
+        //   { $push: { barns: barn._id} },
+        //   { new: true }
+        // );
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { barns: barn._id} },
-          { new: true }
-        );
 
         return barn;
-      }
+     // }
     },
     addPost: async (parent, args, context) => {
-      if (context.user) {
-        const post = await post.create({ ...args, username: context.user.username });
+      // if (context.user) {
+        let user = {
+          
+        }
+        const post = await Posts.create({ ...args });//, username: context.user.username });
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { posts: post._id } },
-          { new: true }
-        );
+        // await User.findByIdAndUpdate(
+        //   { _id: context.user._id },
+        //   { $push: { posts: post._id } },
+        //   { new: true }
+        // );
 
         return post;
-      }
+      // }
 
       throw new AuthenticationError('You need to be logged in!');
     },
