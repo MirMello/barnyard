@@ -4,6 +4,10 @@ const BarnSchema = new Schema({
     _id: {
         type: Schema.Types.ObjectId
     },
+    username: {
+        type: Schema.Types.ObjectId,
+        required: true
+    },
     name: {
         type: String,
         required: true
@@ -15,10 +19,6 @@ const BarnSchema = new Schema({
     posts: {
         type: [Schema.Types.ObjectId],
         default: []
-    },
-    userId: {
-        type: Schema.Types.ObjectId,
-        required: true
     }
 });
 

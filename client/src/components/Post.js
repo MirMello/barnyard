@@ -1,6 +1,9 @@
 import Header from "./header";
 import React, { useState } from 'react';
 import {validatePost} from '../utils/helpers';
+import PostList from './PostList/index';
+import { useQuery } from '@apollo/client';
+import { QUERY_POSTS} from '../utils/queries';
 
 function Post({type}) {
     const [postState, setPostState] = useState({ message: '' });
@@ -27,6 +30,10 @@ function Post({type}) {
         }
     };
 
+
+    const { data } = useQuery(QUERY_POSTS);
+    const posts = data?.posts || [];
+    console.log(posts);
 
     return (
         <div>
@@ -57,6 +64,11 @@ function Post({type}) {
                     </div>
                 )}
             </section>
+            <main>
+                    <div className='flex-row justify-space-between'>
+                        <div className='col-12 mb-3'>{PostList(posts)}</div>
+                    </div>
+                </main>
         </div>
     )
 }

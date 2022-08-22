@@ -30,9 +30,6 @@ import { QUERY_POSTS } from '../utils/queries';
 
 
 function Barns({setcurrentPage}) {
-    const { data } = useQuery(QUERY_POSTS);
-    const posts = data?.posts || [];
-    console.log(posts);
     return (
         <div>
             <body>
@@ -51,11 +48,6 @@ function Barns({setcurrentPage}) {
                         {/* <li onClick={() => setcurrentStall("Stalls")}>Stall 1</li> */}
                     </ul>
                 </nav>
-                <main>
-                    <div className='flex-row justify-space-between'>
-                        <div className='col-12 mb-3'>{/* PRINT POST LIST */}</div>
-                    </div>
-                </main>
             </body>
         </div>
     )

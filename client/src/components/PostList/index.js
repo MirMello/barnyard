@@ -1,14 +1,16 @@
 import React from 'react';
-import PostList from '../components/PostList';
+// import PostList from '../components/PostList';
 
-const PostList = ({ posts, title }) => {
+const PostList = (posts) => {
+  console.log(posts);
+
   if (!posts.length) {
     return <h3>No posts Yet</h3>;
   }
 
   return (
     <div>
-      <h3>{title}</h3>
+      <h3>Title</h3>
       {posts &&
         posts.map(post => (
           <div key={post._id} className="card mb-3">
@@ -19,8 +21,8 @@ const PostList = ({ posts, title }) => {
             <div className="card-body">
               <p>{post.postText}</p>
               <p className="mb-0">
-                Comments: {post.commentCount} || Click to{' '}
-                {post.commentCount ? 'see' : 'start'} the discussion!
+                Comments: {post.comments} || Click to{' '}
+                {post.comments ? 'see' : 'start'} the discussion!
               </p>
             </div>
           </div>
@@ -29,4 +31,4 @@ const PostList = ({ posts, title }) => {
   );
 };
 
-export default postList;
+export default PostList;

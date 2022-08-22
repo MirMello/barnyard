@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const Comment = require('./Comment.js')
 
 const PostsSchema = new Schema({
     _id: {
@@ -17,7 +16,7 @@ const PostsSchema = new Schema({
         required: true
     },
     comments: {
-        type: [Comment],
+        type: [Schema.Types.ObjectId],
         default: []
     }
 });

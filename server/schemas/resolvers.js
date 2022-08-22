@@ -23,6 +23,13 @@ const resolvers = {
       return User.findOne({ username })
         .select('-__v -password')
     },
+    barns: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Barn.find(params).sort({ createdAt: -1 });
+    },
+    barn: async (parent, { _id }) => {
+      return Barn.findOne({ _id });
+    },
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Posts.find(params).sort({ createdAt: -1 });
@@ -45,6 +52,19 @@ const resolvers = {
         console.log(error);
       }
     },
+    deleteUser: async (parents, { email }) => {
+      try { const user = await User.findOne({ email })
+      if (!user) {
+        throw error
+      }
+        await User.findByIdAndDelete(
+          { _id: user._id },
+          { new: true }
+        )
+      } catch(error) {
+        console.log(error)
+      }
+    },
     login: async (parent, { email, password }) => {
       console.log('Hello World')
      try { const user = await User.findOne({ email });
@@ -53,17 +73,29 @@ const resolvers = {
         throw new AuthenticationError('Incorrect credentials');
       }
 
-      const correctPw = await user.isCorrectPassword(password);
-
-      if (!correctPw) {
+      if (password !== user.password) {
         throw new AuthenticationError('Incorrect credentials');
       }
 
       const token = signToken(user);
+      console.log(token);
       return { token, user };
     } catch(error){
       console.log(error);
     }
+    },
+    addBarn: async (parent, args, context) => {
+      if (context.user) {
+        const barn = await barn.create({...args, username: context.user.username});
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { barns: barn._id} },
+          { new: true }
+        );
+
+        return barn;
+      }
     },
     addPost: async (parent, args, context) => {
       if (context.user) {

@@ -56,7 +56,7 @@ function Login({ setcurrentPage }) {
                 email: formLogin.loginEmail, password: formLogin.loginPassword },
           });
           console.log(data);
-          Auth.login(data.addUser.token);
+          Auth.login(data.login.token);
         } catch (e) {
           console.log(e);
         }
