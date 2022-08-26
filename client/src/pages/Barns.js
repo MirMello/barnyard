@@ -29,21 +29,22 @@ import { QUERY_POSTS } from '../utils/queries';
 //     };
 
 
-
 function Barns({ setcurrentPage }) {
     const { data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
     console.log(posts);
-
     return (
-        <div className="container">
-        {/* column one */}
-        <body className="barn">
-            <section>
-                <h1>My Barn</h1>
-            </section>
-            <Post type="barns" />
-        {/* column two */}
+        <body className="container">
+
+            {/* column one */}
+            <div className="barn">
+                <section>
+                    <h1>My Barn</h1>
+                </section>
+                <Post type="barns" />
+            </div>
+
+            {/* column two */}
             <nav className="stallNav">
                 <h2>Go to Stalls:</h2>
                 <ul style={{ display: 'flex', listStyle: 'none' }}>
@@ -55,8 +56,8 @@ function Barns({ setcurrentPage }) {
                     </button>
                 </div>
             </nav>
+
         </body>
-    </div>
     )
 };
 
