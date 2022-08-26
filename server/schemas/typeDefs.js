@@ -21,6 +21,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     gender: String
+    username: String
     posts: [Post]
   }
 
@@ -47,6 +48,8 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
+    animal(username: String): Animal
+    animals: [Animal]
     barns(username: String): [Barn]
     barn(_id: ID!): Barn
     user(username: String!): User

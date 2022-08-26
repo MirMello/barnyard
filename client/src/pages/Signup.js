@@ -20,8 +20,7 @@ function Signup({setcurrentPage}) {
           variables: {
             email: formState.email,
             password: formState.password,
-            firstName: formState.firstName,
-            lastName: formState.lastName,
+            username: formState.firstName + " " + formState.lastName,
           },
         });
         const token = mutationResponse.data.addUser.token;
@@ -84,11 +83,11 @@ function Signup({setcurrentPage}) {
             className="text_input"
           />
         </div>
-        <input type="submit" value="SIGN UP" className="btn" />
+        <button type="submit" className="btn" >SIGN UP</button>
       </form>
-      <a className="link" href="/login">
+      <button className="link" onClick={()=>setcurrentPage('Login')}>
         Login
-      </a>
+      </button>
     </div>
 
 
