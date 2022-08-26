@@ -38,7 +38,7 @@ function Signup({setcurrentPage}) {
       };
      
     
-    };  
+
     return (
         <div className="signup">
       <h4>Sign-Up</h4>
