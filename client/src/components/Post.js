@@ -1,6 +1,9 @@
 import Header from "./header";
 import React, { useState } from 'react';
 import {validatePost} from '../utils/helpers';
+import PostList from './PostList/index';
+import { useQuery } from '@apollo/client';
+import { QUERY_POSTS} from '../utils/queries';
 
 function Post({type}) {
     const [postState, setPostState] = useState({ message: '' });
@@ -28,14 +31,18 @@ function Post({type}) {
     };
 
 
+    const { data } = useQuery(QUERY_POSTS);
+    const posts = data?.posts || [];
+    console.log(posts);
+
     return (
         <div>
             <Header title={`${type=== 'barns'?"Post in your Barnyard":"Post in your Stall"}`} />
-            <div class="post">
-                <h3>Create a Post:</h3>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} />
+            <div className="post">
+                
+                <div className="textbox">
+                    <label for="message"></label>
+                    <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} placeholder=" Create post"/>
                 </div>
                 {errorMessage && (
                     <div>
@@ -46,9 +53,9 @@ function Post({type}) {
                     Submit
                 </button>
             </div>
-            <section>
+            <section className="feed">
                 <h3>Post Feed:</h3>
-                <div>
+                <div className="textbox">
                     <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} />
                 </div>
                 {errorMessage && (
@@ -57,6 +64,11 @@ function Post({type}) {
                     </div>
                 )}
             </section>
+            <main>
+                    <div className='flex-row justify-space-between'>
+                        <div className='col-12 mb-3'>{PostList(posts)}</div>
+                    </div>
+                </main>
         </div>
     )
 }

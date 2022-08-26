@@ -5,11 +5,13 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    password: String
     barns: [Barn]
   }
 
   type Barn {
     _id: ID
+    username: String
     name: String
     animals: [Animal]
     posts: [Post]
@@ -45,6 +47,8 @@ const typeDefs = gql`
   type Query {
     me: User
     users: [User]
+    barns(username: String): [Barn]
+    barn(_id: ID!): Barn
     user(username: String!): User
     posts(username: String): [Post]
     post(_id: ID!): Post
@@ -53,7 +57,9 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addPost(postText: String!): Post
+    deleteUser(email: String!): User
+    addBarn(username: String!, name: String!): Barn
+    addPost(username: String!, postText: String!): Post
     addComment(CommentId: ID!, commentBody: String!): Post
     addAnimal(animalId: ID!): User
   }
