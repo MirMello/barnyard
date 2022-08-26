@@ -34,6 +34,18 @@
   justify-content: space-between;
 }
 
+.navbar {
+  padding: 30px;
+  background-color: var(--color-four);
+  justify-content: space-between;
+}
+
+.navbar ul {
+  font-family: Cantarell;
+  font-size: 50px;
+}
+
+.head-1 
 .navbar h1 {
   color: var(--tertiary-color);
   font-size: 60px;
@@ -140,6 +152,7 @@
 }
 
 /* .head-1 {
+>>>>>>> 70e8e379e739d18484c142da0594a86f6976cf46
   padding: 20px 35px;
   position: -webkit-sticky;
   position: sticky;

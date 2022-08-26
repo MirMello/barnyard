@@ -1,8 +1,12 @@
 const { Schema, model } = require('mongoose');
 
 const BarnSchema = new Schema({
-    _id: {
+    id: {
         type: Schema.Types.ObjectId
+    },
+    username: {
+        type: String,
+        required: true
     },
     name: {
         type: String,
@@ -15,10 +19,6 @@ const BarnSchema = new Schema({
     posts: {
         type: [Schema.Types.ObjectId],
         default: []
-    },
-    userId: {
-        type: Schema.Types.ObjectId,
-        required: true
     }
 });
 
