@@ -2,6 +2,7 @@ import { useState } from "react"
 // import { validateSignup } from '../utils/helpers';
 import Auth from "../utils/auth"
 import ADD_USER from "../utils/mutations";
+import {useMutation} from "@apollo/client"
 
 function Signup({setcurrentPage}) {
     const [formState, setFormState] = useState({ email: '', password: '' });
