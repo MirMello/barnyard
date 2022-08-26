@@ -23,6 +23,12 @@ const resolvers = {
       return User.findOne({ username })
         .select('-__v -password')
     },
+    animal: async (parent, args) => {
+      return Animals.findOne({username: args.username})
+    },
+    animals: async (parent, args) => {
+      return Animals.find()
+    },
     barns: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Barn.find(params).sort({ createdAt: -1 });

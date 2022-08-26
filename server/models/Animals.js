@@ -10,6 +10,9 @@ const AnimalSchema = new Schema({
     gender: {
         type: String
     },
+    username:{
+        type: String
+    },
     posts: {
         type: Schema.Types.ObjectId
     }

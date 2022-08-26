@@ -4,12 +4,13 @@ const postSeeds = require('./barnPostSeed.json');
 const stallSeeds = require('./stallSeed.json');
 const stallPostSeeds = require('./stallPostSeed.json');
 const db = require('../config/connection');
-const { BarnPost, Barn, StallPosts, Stall } = require('../models');
+const { Comment, Animal, Barn, Posts, User } = require('../models');
 
 db.once('open', async () => {
   try {
-    await BarnPost.deleteMany({});
+    await Posts.deleteMany({});
     await Barn.deleteMany({});
+    await Animal.deleteMany({})
 
     await Barn.create(barnSeeds);
 
