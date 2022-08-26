@@ -34,15 +34,15 @@ function Barns({ setcurrentPage }) {
     const posts = data?.posts || [];
     console.log(posts);
     return (
-        <div className="container">
+        <body className="container">
 
             {/* column one */}
-            <body className="barn">
+            <div className="barn">
                 <section>
                     <h1>My Barn</h1>
                 </section>
                 <Post type="barns" />
-            </body>
+            </div>
 
             {/* column two */}
             <nav className="stallNav">
@@ -57,7 +57,7 @@ function Barns({ setcurrentPage }) {
                 </div>
             </nav>
 
-        </div>
+        </body>
     )
 };
 
