@@ -34,12 +34,6 @@
   justify-content: space-between;
 }
 
-.navbar ul {
-  font-family: Cantarell;
-  font-size: 50px;
-}
-
-.head-1 
 .navbar h1 {
   color: var(--tertiary-color);
   font-size: 60px;
@@ -244,6 +238,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 
 
