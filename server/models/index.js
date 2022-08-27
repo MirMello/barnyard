@@ -4,4 +4,4 @@ const Barn = require('./Barn');
 const Posts = require('./Posts');
 const User = require('./User');
 
-module.exports = {Comment, Animal, Barn, Posts, User };
+module.exports = { Comment, Animal, Barn, Posts, User };

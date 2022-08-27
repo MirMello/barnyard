@@ -1,24 +1,24 @@
 [
     {
-        "animalName" : "Pepper", 
+        "name" : "Pepper", 
         "username" : "MichelleBarn",
         "gender" : "mare",
         "stallPosts" : [] 
     },
     { 
-        "animalName" : "Daisy", 
+        "name" : "Daisy", 
         "username" : "MichelleBarn",
         "gender" : "mare",
         "stallPosts" : [] 
     },
     {  
-        "animalName" : "Sven", 
+        "name" : "Sven", 
         "username" : "MichelleBarn",
         "gender" : "stallion",
         "stallPosts" : [] 
     },
     {  
-        "animalName" : "Sprite", 
+        "name" : "Sprite", 
         "username" : "MirandaBarn",
         "gender" : "mare",
         "stallPosts" : [] 

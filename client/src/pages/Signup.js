@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState } from "react"
 // import { validateSignup } from '../utils/helpers';
-import Auth from "../utils/auth";
-import { ADD_USER } from "../utils/mutations";
-import { useMutation } from "@apollo/client";
+import Auth from "../utils/auth"
+import {ADD_USER} from "../utils/mutations";
+import {useMutation} from "@apollo/client"
 
+<<<<<<< HEAD
 function Signup() {
   const [formState, setFormState] = useState({
     email: "",
@@ -11,64 +12,103 @@ function Signup() {
     username: "",
   });
   const [addUser, { error }] = useMutation(ADD_USER);
+=======
+function Signup({setcurrentPage}) {
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [addUser, { error }] = useMutation(ADD_USER);
+  
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+  
+      if (error) {
+        console.log(Object.values(error));
+      }
+  
+      try {
+        const mutationResponse = await addUser({
+          variables: {
+            email: formState.email,
+            password: formState.password,
+            username: formState.firstName + " " + formState.lastName,
+          },
+        });
+        const token = mutationResponse.data.addUser.token;
+        Auth.login(token);
+      } catch (e) {
+        console.log(error);
+      }
+    };
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+      };
+     
+    
+>>>>>>> 267aeaa5a83ab1a9996df49e9fe1d985eb2eea2d
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    if (error) {
-      console.log(Object.values(error));
-    }
-    console.log(formState);
-    try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
-      console.log(data);
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  return ( 
-    <div className="signup">
-      <h1>Sign-Up</h1>
+    return (
+        <div className="signup">
+      <h4>Sign-Up</h4>
       <form onSubmit={handleFormSubmit}>
-        <input
-          type="text"
-          name="username"
-          value={formState.username}
-          placeholder="First Name"
-          onChange={handleChange}
-          className="text_input"/>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formState.email}
-          onChange={handleChange}
-          className="text_input"/>
-        <input
-          type="password"
-          value={formState.password}
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          className="text_input"/>
-        <input type="submit" value="SIGN UP" className="btn" />
+        <div className="text_area">
+          <input
+            type="firstName"
+            id="firstName"
+            name="firstName"
+            placeholder="First Name"
+            onChange={handleChange}
+            className="text_input"
+          />
+        </div>
+        <div className="text_area">
+          <input
+            type="lastName"
+            id="lastName"
+            name="lastName"
+            placeholder="Last Name"
+            onChange={handleChange}
+            className="text_input"
+          />
+          </div>
+          <div className="text_area">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            className="text_input"
+          />
+        </div>
+        <div className="text_area">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+            className="text_input"
+          />
+        </div>
+        <button type="submit" className="btn" >SIGN UP</button>
       </form>
-      <a className="link" href="/login">
+      <button className="link" onClick={()=>setcurrentPage('Login')}>
         Login
+<<<<<<< HEAD
       </a>
     </div> 
   )
 };
 
+=======
+      </button>
+    </div>
+
+
+    )
+}
+>>>>>>> 267aeaa5a83ab1a9996df49e9fe1d985eb2eea2d
 export default Signup;
