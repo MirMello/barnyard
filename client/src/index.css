@@ -25,7 +25,7 @@
   /* background-color: var(--tertiary-color);
 } */
 
-.navbar {
+.Navbar {
   padding: 30px;
   background-color: var(--color-four);
   font-family: Cantarell;
@@ -34,12 +34,12 @@
   justify-content: space-between;
 }
 
-.navbar h1 {
+.Navbar h1 {
   color: var(--tertiary-color);
   font-size: 60px;
 }
 
-.navbar ul {
+.Navbar ul {
 
   justify-content: space-between;
   gap: 10px;
