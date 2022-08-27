@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Navbar(){
     return(
-
         <nav className= "navbar">
           <h1>Barnyard</h1>
         <ul style={{ display: 'flex', listStyle: 'none' }}>
