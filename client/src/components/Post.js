@@ -1,11 +1,12 @@
 import Header from "./header";
 import React, { useState } from 'react';
-import {validatePost} from '../utils/helpers';
+import { validatePost } from '../utils/helpers';
+import { capitalizeFirstLetter } from '../utils/helpers';
 import PostList from './PostList/index';
 import { useQuery } from '@apollo/client';
-import { QUERY_POSTS} from '../utils/queries';
+import { QUERY_POSTS } from '../utils/queries';
 
-function Post({type}) {
+function Post({ type }) {
     const [postState, setPostState] = useState({ message: '' });
     const [errorMessage, setErrorMessage] = useState('');
     const { message } = postState;
@@ -37,30 +38,32 @@ function Post({type}) {
 
     return (
         <div>
-            <Header title={`${type=== 'barns'?"Post in your Barnyard":"Post in your Stall"}`} />
+            <div className="postHeader" >
+                <Header title={`${type === 'barns' ? "Post in Your Barnyard" : "Post in Your Stall"}`} />
+            </div>
             <div className="post">
-                
+
                 <div className="textbox">
                     <label for="message"></label>
-                    <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} placeholder=" Create post"/>
+                    <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} placeholder=" Create Your Post" />
                 </div>
-                {errorMessage && (
-                    <div>
-                        <p className="error-text">{errorMessage}</p>
-                    </div>
-                )}
                 <button type="submit">
                     Submit
                 </button>
+                {errorMessage && (
+                    <div>
+                        <p className="error-text">{capitalizeFirstLetter(errorMessage)}</p>
+                    </div>
+                )}
             </div>
-            <section className="feed">
+            {/* <section className="feed">
                 <h3>Post Feed:</h3>
-                <div className="textbox">
+                <div className="posts">
                     <textarea name="message" rows="5" defaultValue={message} onBlur={newPost} />
                 </div>
                 {errorMessage && (
                     <div>
-                        <p className="error-text">{errorMessage}</p>
+                        <p className="error-text">{capitalizeFirstLetter(errorMessage)}</p>
                     </div>
                 )}
             </section>
@@ -68,7 +71,9 @@ function Post({type}) {
                     <div className='flex-row justify-space-between'>
                         <div className='col-12 mb-3'>{PostList(posts)}</div>
                     </div>
-                </main>
+                </main> */}
+
+            <PostList></PostList>
         </div>
     )
 }

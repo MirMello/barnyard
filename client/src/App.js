@@ -1,6 +1,5 @@
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 // import logo from './logo.svg';
@@ -14,7 +13,7 @@ import Addanimal from './pages/Addanimal';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 //import NavBar from "./components/Navbar";
-// import logo from "./images/logo.png";
+import logo from "./images/horse.png";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -29,26 +28,24 @@ function App() {
   const [currentPage, setcurrentPage] = useState('Barns')
   return (
     <ApolloProvider client={client}>
-    <div>
-      <nav className='navbar'>
-      <div className='logo'>
-        
-        <img src= {logo}></img>
-        <h1 id='title'>Barn<span>yard</span></h1>
+      <div>
+        <nav className='navbar'>
+          <div className='logo'>
+            <img src={logo}></img>
+            <h1 id='title'>Barn<span>yard</span></h1>
+          </div>
+          <ul style={{ display: 'flex', listStyle: 'none' }}>
+            <button className='navbar-button' onClick={() => setcurrentPage("Login")} type="login-button">Login</button>
+            <button className='navbar-button' onClick={() => setcurrentPage("Signup")} type="sign-up-button">Sign Up</button>
+            <button className='navbar-button' onClick={() => setcurrentPage("Barns")} type="barns-button">Barns</button>
+          </ul>
+        </nav>
+        {currentPage === "Stalls" && <Stalls />}
+        {currentPage === "Addanimal" && <Addanimal setcurrentPage={setcurrentPage} />}
+        {currentPage === "Barns" && <Barns setcurrentPage={setcurrentPage} />}
+        {currentPage === "Login" && <Login setcurrentPage={setcurrentPage} />}
+        {currentPage === "Signup" && <Signup setcurrentPage={setcurrentPage} />}
       </div>
-      
-        <ul style={{ display: 'flex', listStyle: 'none' }}>
-          <button className='navbar-button' onClick = {()=>setcurrentPage("Login")}type="login-button">Login</button>
-          <button className='navbar-button' onClick = {()=>setcurrentPage("Signup")}type="sign-up-button">Sign Up</button>
-          <button className='navbar-button' onClick = {()=>setcurrentPage("Barns")}type="barns-button">Barns</button>
-        </ul>
-      </nav>
-      {currentPage === "Stalls" && <Stalls />}
-       {currentPage === "Addanimal" && <Addanimal setcurrentPage={setcurrentPage}/>}
-         {currentPage === "Barns" && <Barns setcurrentPage={setcurrentPage}/>}
-         {currentPage === "Login" && <Login setcurrentPage={setcurrentPage}/>}
-         {currentPage === "Signup" && <Signup setcurrentPage={setcurrentPage}/>}
-    </div>
     </ApolloProvider>
   );
 }

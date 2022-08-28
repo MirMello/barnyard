@@ -66,15 +66,15 @@ function Login({ setcurrentPage }) {
     return (
         <div className='login'>
             <h1>Login</h1>
-            <div>
+            <div className='email'>
                 <label for="loginEmail">Email:</label>
-                <input name='loginEmail' type='text' value={loginEmail.email} onChange={handleInput}></input>
+                <input className="emailInput" name='loginEmail' type='text' value={loginEmail.email} onChange={handleInput}></input>
             </div>
-            <div>
+            <div className='password'>
                 <label for="loginPassword">Password:</label>
-                <input name='loginPassword' type='text' value={loginPassword.password} onChange={handleInput}></input>
+                <input className="passwordInput" name='loginPassword' type='text' value={loginPassword.password} onChange={handleInput}></input>
             </div>
-            <div>
+            <div className='loginbtns'>
                 <button onClick={handleFormSubmit}>
                     Login
                 </button>

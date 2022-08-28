@@ -1,34 +1,21 @@
 :root {
-  --primary-color: rgb(250, 243, 243);
-  --secondary-color: #3e4a61;
-  --tertiary-color: #c24d2c;
-  --color-four:  #d9dad7;
+  --primary-color: #e7eff3;
+  --secondary-color: #1a2639;
+  --tertiary-color: #992e24;
+  --color-four: #8ea6b4;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
- 
+  background: var(--primary-color);
+  /* border: 1px black solid; */
 }
 
-/* .body-1 {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* padding: 20px 35px; */
-  /* background-color: var(--tertiary-color);
-} */
-
 .navbar {
-  padding: 15px;
+  padding: 0 50px 0 15px;
   background-color: var(--color-four);
-  font-family: Cantarell;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,94 +23,156 @@
 
 .navbar h1 {
   color: var(--tertiary-color);
+  background-color: var(--color-four);
   font-size: 60px;
 }
 
-.navbar span{
-  color: var(--secondary-color) ;
+.navbar span {
+  background-color: var(--color-four);
+  color: var(--secondary-color);
 }
 
 .navbar ul {
+  background-color: var(--color-four);
   justify-content: space-between;
   gap: 20px;
 }
 
-.logo{
-  display: flex; 
-
+.logo {
+  background-color: var(--color-four);
+  display: flex;
+  align-items: center;
 }
 
-.logo img{
-background: #fff;  
-height: 70px;
-width: 70px;
-border-radius: 50%;
-margin-right: 8px;
-
+.logo img {
+  background-color: var(--color-four);
+  height: 130px;
+  width: 130px;
 }
-
-
-
 
 
 .login {
-  margin-left: 35px;
-  padding: 25px 0 25px 0;
+  margin: 25px 0 0 35px;
+  padding: 25px 0 100px 25px;
+  width: 25%;
   font-family: Cantarell;
+  background: var(--color-four);
+  border: 1px;
+  border-radius: 15px;
+  position: relative;
 }
 
-.login label {
-  margin: 50px 0 20px 20px;
-  padding: 20px;
+.login h1 {
+  text-align: center;
+  background: var(--color-four);
+}
+
+.email {
+  margin: 15px 0 20px 20px;
+  width: 75%;
+  background: var(--color-four);
+  position: relative;
+}
+
+.email label {
+  background: var(--color-four);
+  left: 0;
+}
+
+.emailInput {
+  width: 75%;
+  position: absolute;
+  right: 0px;
+}
+
+.password {
+  margin: 50px 0 5px 20px;
+  width: 75%;
+  background: var(--color-four);
+  position: relative;
+}
+
+.password label {
+  background: var(--color-four);
+}
+
+.passwordInput {
+  width: 75%;
+  position: absolute;
+  right: 0;
 }
 
 .login button {
-  margin-top: 25px;
-  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .loginbtns {
-  
-  gap: 5px;
+  background: var(--color-four);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 .signup {
-  margin-left: 35px;
-  padding: 25px 0 25px 0;
+  margin: 25px 0 0 35px;
+  padding: 25px 0 100px 5%;
+  width: 25%;
   font-family: Cantarell;
+  background: var(--color-four);
+  border: 1px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.signup h1 {
+  width: 75%;
+  text-align: center;
+  background: var(--color-four);
+}
+
+.signup form {
+  background: var(--color-four);
+  width: 75%;
+  align-items: center;
+}
+
+.text_area {
+  background: var(--color-four);
 }
 
 .signup input {
   display: flex;
   margin: 5px;
   padding: 10px;
-  background-color: var(--color-four);
+  width: 97%;
 }
 
 .signup .btn {
   color: var(--primary-color);
   background-color: var(--secondary-color);
   border: none;
-  padding: 7px 20px;
+  padding: px 20px;
   font-size: 16px;
   border-radius: 10px;
+  margin-top: 5px;
+  position: absolute;
+  right: 95px;
 }
 
-.signup a {
-  margin: 135px;
-  text-decoration: none;
-  font-size: 23px;
-  color: var(--tertiary-color);
+.signup button {
+  margin-top: 45px;
+  position: absolute;
+  right: 95px;
 }
 
 .container {
   display: flex;
   justify-content: space-evenly;
-  gap: 15px
+  gap: 15px;
 }
 
 .barn {
-  margin-left: 35px;
+  margin-left: 8%;
   padding: 25px 0 25px 0;
   font-family: Cantarell;
   width: 75%;
@@ -131,21 +180,39 @@ margin-right: 8px;
 
 .barn h1 {
   font-size: 40px;
+  border-width: 10px;
 }
+
+.myBarn {
+  padding: 15px;
+  background: var(--tertiary-color);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* background:
+    linear-gradient(135deg, transparent 45px, var(--tertiary-color) 0) top left,
+    linear-gradient(-135deg, transparent 45px, var(--tertiary-color) 0) top right,; */
+  }
 
 .post {
   display: flex;
- margin-top: 15px;
- gap: 1rem;
+  margin-top: 15px;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .textbox {
+  width: 50%;
+}
+
+.posts textarea {
+  border: none;
   width: 100%;
+  pointer-events: none;
 }
 
 .textbox textarea {
   width: 100%;
-  height:100%;
+  height: 100%;
 }
 
 .feed {
@@ -154,54 +221,27 @@ margin-right: 8px;
 }
 
 .stallNav {
-  margin-top: 35px;
-  margin-right: 35px;
   width: 25%;
-  position: sticky;
+  position: sticky fixed;
+  top: 0px;
+  margin: 25px 15px 0 0;
+  background: var(--color-four);
+  padding: 50px 0 20% 50px;
+  border: 1px;
+  border-radius: 10%;
 }
 
-/* .head-1 {
-  padding: 20px 35px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+.stallNav h2 {
   background-color: var(--color-four);
-  width: 100%;
-} */
+  width: 50%;
+}
 
-/* .head-1 ul {
-  display: block;
-  /* padding: 0, 30px;
-  font-weight: bold;
-  font-size: 36px;
-  color: var(--primary-color);
-  padding: 5px;
-  width: 100%;
-  margin: 0;
-} */
-
-/* .head-1 ul li {
-  display: inline;
-} */
-
-/* .menu-items {
-  float: right;
-  margin-left: 10px;
-} */
-
-/* .barns {
-  padding: 35px;
-  display: flex;
-  width: 100%;
-} */
-
-/* .barns section {
-  flex: 100%;
-} */
+.stallNav div {
+  background-color: var(--color-four);
+  width: 50%;
+}
 
 button {
-  /* position: relative;
-  left: 40px; */
   color: var(--primary-color);
   background-color: var(--secondary-color);
   text-decoration: none;
@@ -215,57 +255,7 @@ button:hover {
   background-color: var(--tertiary-color);
 }
 
-/* .barns body section h1 {
-  font-size: 33px;
-} */
-
-/* .button-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-} */
-
-/* .button-list button {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
-  border: none;
-  padding: 7px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-} */
-
-/* .button-list button:hover {
-  background-color: var(--tertiary-color);
-} */
-
-/* .post {
-  /* background-color: var(--color-four); 
-} */
-
-/* .post button {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
-  border: none;
-  padding: 7px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-} */
-
-/* .post button:hover {
-  background-color: var(--tertiary-color);
-} */
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-
-
-
-
-
-
-
-

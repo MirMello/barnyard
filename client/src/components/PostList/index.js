@@ -5,10 +5,11 @@ const PostList = (posts) => {
   console.log(posts);
 
   if (!posts.length) {
-    return <h3>No posts Yet</h3>;
+    return <h3>No Posts Yet</h3>;
   }
 
-  return (
+  else {
+    return (
     <div>
       <h3>Title</h3>
       {posts &&
@@ -29,6 +30,6 @@ const PostList = (posts) => {
         ))}
     </div>
   );
-};
+}};
 
 export default PostList;
