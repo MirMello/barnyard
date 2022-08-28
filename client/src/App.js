@@ -14,7 +14,7 @@ import Addanimal from './pages/Addanimal';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 //import NavBar from "./components/Navbar";
-//import logo from "./images/logo.png";
+// import logo from "./images/logo.png";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
