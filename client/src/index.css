@@ -1,15 +1,15 @@
 :root {
-  --primary-color: #d4a55d;
-  --secondary-color: #507661;
-  --tertiary-color: #ee593f;
-  --color-four: #c3d5dc;
+  --primary-color: rgb(250, 243, 243);
+  --secondary-color: #3e4a61;
+  --tertiary-color: #c24d2c;
+  --color-four:  #d9dad7;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid black; */
+ 
  
 }
 
@@ -26,7 +26,7 @@
 } */
 
 .navbar {
-  padding: 30px;
+  padding: 15px;
   background-color: var(--color-four);
   font-family: Cantarell;
   display: flex;
@@ -39,10 +39,32 @@
   font-size: 60px;
 }
 
+.navbar span{
+  color: var(--secondary-color) ;
+}
+
 .navbar ul {
   justify-content: space-between;
-  gap: 10px;
+  gap: 20px;
 }
+
+.logo{
+  display: flex; 
+
+}
+
+.logo img{
+background: #fff;  
+height: 70px;
+width: 70px;
+border-radius: 50%;
+margin-right: 8px;
+
+}
+
+
+
+
 
 .login {
   margin-left: 35px;

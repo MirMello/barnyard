@@ -4,15 +4,6 @@ import Auth from "../utils/auth"
 import {ADD_USER} from "../utils/mutations";
 import {useMutation} from "@apollo/client"
 
-<<<<<<< HEAD
-function Signup() {
-  const [formState, setFormState] = useState({
-    email: "",
-    password: "",
-    username: "",
-  });
-  const [addUser, { error }] = useMutation(ADD_USER);
-=======
 function Signup({setcurrentPage}) {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [addUser, { error }] = useMutation(ADD_USER);
@@ -47,7 +38,6 @@ function Signup({setcurrentPage}) {
       };
      
     
->>>>>>> 267aeaa5a83ab1a9996df49e9fe1d985eb2eea2d
 
     return (
         <div className="signup">
@@ -97,18 +87,10 @@ function Signup({setcurrentPage}) {
       </form>
       <button className="link" onClick={()=>setcurrentPage('Login')}>
         Login
-<<<<<<< HEAD
-      </a>
-    </div> 
-  )
-};
-
-=======
       </button>
     </div>
 
 
     )
 }
->>>>>>> 267aeaa5a83ab1a9996df49e9fe1d985eb2eea2d
 export default Signup;

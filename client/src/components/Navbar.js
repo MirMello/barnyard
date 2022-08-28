@@ -13,11 +13,11 @@ function Navbar() {
   )
 };
 
-<<<<<<< HEAD
-export default Navbar;
-=======
+
+
+
 export default Navbar;
 
         // <button onClick={() => setcurrentPage("Login")} type="login-button">Login</button>
         // <button onClick={() => setcurrentPage("Signup")} type="sign-up-button">Sign Up</button>
->>>>>>> 267aeaa5a83ab1a9996df49e9fe1d985eb2eea2d
+
