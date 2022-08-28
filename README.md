@@ -20,7 +20,8 @@ An app that for those with farm animals to connect to others in the community.
 
 ## Deployment
 
-![barnyard](https://user-images.githubusercontent.com/96323393/185814548-852f8481-c5b1-415c-8dd4-a30785608bcb.jpg)
+![barnyard](https://user-images.githubusercontent.com/96323393/187098189-60ca675e-3490-4042-962a-8c88b9c813a7.jpg)
+
 
 ## Made by
 Miranda Mello, Alex Canez, Braden Sandgren, and Alex Standfield
