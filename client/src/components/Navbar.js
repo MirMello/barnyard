@@ -13,7 +13,11 @@ function Navbar() {
   )
 };
 
+
+
+
 export default Navbar;
 
         // <button onClick={() => setcurrentPage("Login")} type="login-button">Login</button>
         // <button onClick={() => setcurrentPage("Signup")} type="sign-up-button">Sign Up</button>
+

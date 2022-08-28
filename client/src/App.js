@@ -13,7 +13,8 @@ import Stalls from './pages/Stalls';
 import Addanimal from './pages/Addanimal';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import NavBar from "./components/Navbar";
+//import NavBar from "./components/Navbar";
+//import logo from "./images/logo.png";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -30,7 +31,12 @@ function App() {
     <ApolloProvider client={client}>
     <div>
       <nav className='navbar'>
-      <h1 id='title'>Barnyard</h1>
+      <div className='logo'>
+        
+        <img src= {logo}></img>
+        <h1 id='title'>Barn<span>yard</span></h1>
+      </div>
+      
         <ul style={{ display: 'flex', listStyle: 'none' }}>
           <button className='navbar-button' onClick = {()=>setcurrentPage("Login")}type="login-button">Login</button>
           <button className='navbar-button' onClick = {()=>setcurrentPage("Signup")}type="sign-up-button">Sign Up</button>
